@@ -1,0 +1,59 @@
+.navbar{
+    background-color: #282c34;
+    position: sticky;
+    top: 0;
+    color: white;
+    height: 60px;
+}
+
+.nav-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-container li{
+    list-style: none;
+}
+
+.menu-icon{
+    padding: 0.5rem 1rem;
+}
+
+.menu-icon img{
+    height: 40px;
+
+}
+
+
+.nav-item {
+    padding: 0.8rem 1rem;
+    color:white;
+    font-size: 20px;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: white;
+    height: 100%;
+
+}
+.nav-links:hover{
+    color: pink;
+}
+
+.nav-item:hover {
+    color: pink;
+}
+
+.search-icon{
+    position: absolute;
+    right: 0;
+    padding: 0.2rem 1rem;
+}
+
+.search-icon img{
+    height: 50px;
+}
+
+
+

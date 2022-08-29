@@ -1,0 +1,13 @@
+.header-container {
+    height: 200px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container img{
+    height: 290px;
+    width: 280px;
+}
