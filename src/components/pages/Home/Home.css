@@ -1,0 +1,19 @@
+.home{
+
+
+
+}
+
+.home img{
+    width: 100%;
+}
+
+.arrow-btn-icon{
+    font-size: large ;
+    color: white
+}
+
+.arrow-btn-icon:hover{
+    color: black;
+}
+

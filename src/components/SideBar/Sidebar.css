@@ -1,0 +1,33 @@
+
+.sidebar {
+    position: sticky;
+    overflow: hidden;
+    float: right;
+    width: 150px;
+    top: 100px;
+    right: 0;
+    max-height: 100vh;
+    margin: 25px;
+    padding-bottom: 20px;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.sidebar-item{
+
+    margin-left: 20px;
+    height: 80px;
+    border-radius: 10px;
+    /*background-color: #f2f8fa;*/
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    text-decoration: none;
+    font-family: 'Didiot';
+}
+
+@media screen and (max-width: 970px) {
+    .sidebar{
+        display: none
+    }
+}

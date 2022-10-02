@@ -1,0 +1,49 @@
+.register{
+    width: 60%;
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+    height: 600px;
+    box-shadow: 3px 6px 15px -6px rgba(1,1,1,0.75);
+
+}
+
+
+.register > div > img{
+    object-fit: contain;
+    height: 250px;
+}
+
+.register > div{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.register > form {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.register > form > input {
+
+    width: 200px;
+    height: 25px;
+    outline-width: 0;
+    border: none;
+    padding: 5px 20px;
+    margin-bottom: 15px;
+    border-radius: 999px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+
