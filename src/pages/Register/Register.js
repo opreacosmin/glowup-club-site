@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import "./Register.css"
-import {Button} from "../../Buttons/Button";
-import {auth, provider} from "../../../firebase-config.js";
-import {useStateValue} from "../../../StateProvider";
-import {actionTypes} from "../../../reducer";
+import {Button} from "../../components/Buttons/Button";
+import {auth, provider} from "../../firebase-config.js";
+import {useStateValue} from "../../StateProvider";
+import {actionTypes} from "../../reducer";
 import GoogleIcon from '@mui/icons-material/Google';
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import {Link, useNavigate} from "react-router-dom";

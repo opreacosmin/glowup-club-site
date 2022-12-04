@@ -29,6 +29,6 @@ const analytics = getAnalytics(app);
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 const db = getFirestore();
-connectFirestoreEmulator(db, 'localhost', 3000);
+connectFirestoreEmulator(db, 'localhost', 4000);
 export {auth,provider};
 export default db;

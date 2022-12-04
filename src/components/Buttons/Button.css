@@ -82,3 +82,13 @@
     background: #fff;
     color: #242424;
 }
+
+.nav--btn{
+    background-color: #282c34;
+    color: white;
+}
+
+.nav--btn:hover{
+    background-color: #282c34;
+    color:pink;
+}

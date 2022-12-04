@@ -1,0 +1,19 @@
+
+.main_container .redirect{
+    height: auto;
+    width: auto;
+    background-color: black;
+    margin: 50px;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.main_container .redirect .link_wrapper{
+    margin: 20px;
+}
+
+.main_container .redirect > h1{
+    color: white;
+    padding: 10px;
+}

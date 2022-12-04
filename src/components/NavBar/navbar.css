@@ -2,80 +2,139 @@
     height: 70px;
     background-color: #282c34;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
     position: sticky;
     top: 0;
     z-index: 999;
 }
 
-.nav-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70px;
-    max-width: 1500px;
-}
-
-.nav-menu {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin-right: 2rem;
-    width: 60vw;
-    text-align: center;
-    justify-content: center;
-
-
-}
-
-.menu-icon{
-    display: none;
-}
-
-.profile-icon{
+.navbar .user_info{
     display: flex;
     flex-direction: row;
     color: white;
-
 }
 
-.profile-icon > img {
+.navbar .user_info .profile-icon{
+    padding-right: 5px;
+}
+
+.navbar .user_info .profile-icon > img {
     object-fit: contain;
     width: 40px;
     height: 30px;
     border-radius: 20px;
-
-
 }
 
-.nav-item {
-    color:white;
-    height: 60px;
+.navbar .nav-menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    text-align: center;
+    justify-content: center;
 }
 
-.nav-links {
+.navbar .menu-icon{
+    display: none;
+}
+
+
+
+.has-dropdown {
+    position: relative;
+}
+
+.navbar .links-menu > li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar .links-menu .nav-links {
+    height: 30px;
+    display: block;
     text-decoration: none;
     color: white;
-    height: 100%;
-    padding: 0.2rem 1rem;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-
+    padding-right: 2.2rem;
+    padding-top: 0;
+    margin-left: -10px;
+    font-size: 1.2rem;
 }
 
-.nav-links:hover{
+.navbar .links-menu .nav-links:hover{
     color: pink;
     transition: all 0.2s ease-out;
 }
 
+.arrow{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -0.15em;
+    transition: transform 100ms ease-in-out;
+}
 
-.nav-links-mobile {
+.navbar .links-menu > li:hover .arrow,
+.navbar .links-menu .submenu > li:hover > .links > .arrow
+{
+    transform: rotate(270deg);
+}
+
+
+.navbar .links-menu .submenu{
+    list-style: none;
+    position: absolute;
+    left: -40px;
+    padding: 0;
+    min-width: 14em;
+    background-color: ghostwhite;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    white-space: nowrap;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top center;
+}
+
+.submenu .submenu {
+    margin-left: -82%;
+    top: 15px;
+}
+.submenu .submenu .submenu {
+    left: -100%;
+    top: 0;
+}
+
+.navbar .links-menu> li:hover > .submenu,
+.submenu > li:hover > .submenu {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.navbar .links-menu .submenu .links{
+    display: block;
+    text-decoration:none;
+    color: black;
+    padding: 0.8em 1.5em;
+}
+
+.navbar .links-menu .submenu .links:hover .submenu2{
+    display: block;
+}
+
+.navbar .links-menu .submenu2{
+    position: absolute;
+    width: 140px ;
+    margin-top: 20px;
+    left: 100%;
+    background-color: ghostwhite;
     display: none;
 }
 
+.navbar .links-menu .submenu .links:hover{
+    background-color: darkgray;
+}
+
+.navbar .links-menu  .nav-links-mobile{
+    display: none;
+}
 
 .search-icon{
     position: absolute;
@@ -85,9 +144,7 @@
     padding: 0.4em 1rem;
     cursor: pointer;
     text-decoration: none;
-
 }
-
 
 .search-icon img{
     height: 50px;
@@ -98,40 +155,56 @@
 
 @media screen and (max-width: 970px) {
 
-    .NavbarItems {
-        position: relative;
-    }
-
-    .nav-menu {
+    .navbar .nav-menu {
         display: flex;
         flex-direction: column;
-        width: 270px;
-        height: 90vh;
         position: absolute;
-        top: 70px;
         left: -110%;
-        opacity: 1;
-        transition: all 0.5s ease;
+    }
+
+    .navbar .nav-menu.active {
+        width: 210px;
+        top: 4em;
+        background:#282c34;
+        left: 0;
+        opacity: 99%;
+        z-index: 9999;
+        transition: all 0.5s ease-in-out;
         overflow: hidden;
         justify-content: start;
         align-items: start;
+        height: 100vh;
     }
 
-    .nav-menu.active {
-        background:#282c34;
-        margin-top: 0;
-        left: 0;
-        opacity: 99%;
-        transition: all 0.5s ease;
-        z-index: 9999;
-        overflow-y: hidden;
+    .navbar .nav-menu.active .links-menu{
+        display: flex;
+        flex-flow: column;
+        color: #fff;
+        transition: all 0.3s ease-out;
+        text-decoration: none;
+        font-size: 1.5rem;
+        background-color: transparent;
+
     }
 
-    .profile-icon{
+    .navbar .nav-menu.active .links-menu .nav-links {
+        text-align: center;
+        display: table;
+        margin-top: 20px;
+        height: 35px;
+    }
+
+    .navbar .nav-menu.active .links-menu .nav-links:hover {
+        background-color: #fff;
+        color: black;
+        border-radius: 5px;
+    }
+
+    .navbar .user_info{
         display: none;
     }
 
-    .menu-icon {
+    .navbar .menu-icon {
         display: block;
         position: absolute;
         left: 0;
@@ -140,49 +213,164 @@
         font-size: 1.8rem;
     }
 
-    .menu-icon img{
+    .navbar .menu-icon .close{
+        color: white;
+        font-size: 40px;
+    }
+
+    .navbar .menu-icon img{
         height: 40px;
     }
 
 
-    .nav-item{
-        height: 60px;
-        padding-top: 0.8rem;
-    }
-
-    .nav-links {
-        text-align: center;
-        width: 100%;
-        display: table;
-    }
-
-    .nav-links:hover {
-        background-color: #fff;
-        color: #242424;
-        border-radius: 10px;
-    }
 
 
-
-    .nav-links-mobile {
-        display: block;
-        text-align: center;
-        width: 100%;
-        text-decoration: none;
-        font-size: 1.5rem;
-        background-color: transparent;
-        color: #fff;
-        transition: all 0.3s ease-out;
-    }
-
-    .nav-links-mobile:hover {
-        background: #fff;
-        color: #242424;
-        transition: 250ms;
-    }
 }
 
 
+/* Top Navigation Bar */
+
+:root {
+    --bg:  #242526;
+    --bg-accent: #484a4d;
+    --text-color: #dadce1;
+    --nav-size: 60px;
+    --border: 1px solid #474a4d;
+    --border-radius: 8px;
+    --speed: 500ms;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;;
+}
+
+
+
+.navbar-nav {
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* <li> */
+.nav-item {
+    width: calc(var(--nav-size) * 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon Button */
+.icon-button {
+    --button-size: calc(var(--nav-size) * 0.5);
+    width: var(--button-size);
+    height: var(--button-size);
+    background-color: #484a4d;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 300ms;
+}
+
+.icon-button:hover {
+    filter: brightness(1.2);
+}
+
+.icon-button svg {
+    fill: var(--text-color);
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Dropdown Menu */
+
+.dropdown {
+    position: absolute;
+    top: 58px;
+    width: 300px;
+    transform: translateX(-45%);
+    background-color: var(--bg);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    overflow: hidden;
+    transition: height var(--speed) ease;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    transition: background var(--speed);
+    padding: 0.5rem;
+}
+
+.menu-item .icon-button {
+    margin-right: 0.5rem;
+}
+
+
+.menu-item .icon-button:hover {
+    filter: none;
+}
+
+.menu-item:hover {
+    background-color: #525357;
+}
+
+.icon-right {
+    margin-left: auto;
+}
+
+/* CSSTransition classes  */
+.menu-primary-enter {
+    position: absolute;
+    transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+    transform: translateX(0%);
+    transition: all var(--speed) ease;
+}
+.menu-primary-exit {
+    position: absolute;
+}
+.menu-primary-exit-active {
+    transform: translateX(-110%);
+    transition: all var(--speed) ease;
+}
+
+
+.menu-secondary-enter {
+    transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+    transform: translateX(0%);
+    transition: all var(--speed) ease;
+}
+.menu-secondary-exit {
+
+}
+.menu-secondary-exit-active {
+    transform: translateX(110%);
+    transition: all var(--speed) ease;
+}
 
 
 

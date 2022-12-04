@@ -1,0 +1,17 @@
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.sidebar-container{
+
+}
+
+.feed-container{
+    flex-direction: column;
+}

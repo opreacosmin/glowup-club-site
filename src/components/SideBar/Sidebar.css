@@ -1,27 +1,29 @@
-
 .sidebar {
     position: sticky;
     overflow: hidden;
-    float: right;
-    width: 150px;
-    top: 100px;
+    overflow-y: auto;
+    width: 12rem;
+    top: 70px;
     right: 0;
-    max-height: 100vh;
     margin: 25px;
     padding-bottom: 20px;
-    height: 100%;
     z-index: 1;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 hsl(210deg 8% 5% / 5%);
+    transition: box-shadow ease-in-out .1s,transform ease-in-out .1s;
+    transform: translateZ(0);
 }
 
 
 .sidebar-item{
 
     margin-left: 20px;
-    height: 80px;
+    height: 150px;
     border-radius: 10px;
     /*background-color: #f2f8fa;*/
     background: #fff;
-    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.17);
     text-decoration: none;
     font-family: 'Didiot';
 }

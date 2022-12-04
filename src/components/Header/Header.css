@@ -1,4 +1,5 @@
 .header-container {
+    margin-top: 25px;
     height: 200px;
     background-color: white;
     display: flex;
@@ -8,6 +9,35 @@
 }
 
 .header-container img{
-    height: 290px;
-    width: 280px;
+    height: 210px;
+    width: 210px;
+}
+
+.header-socials {
+    margin-left: -40px;
+    margin-top: -35px;
+    display: flex;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.tiktok{
+    margin-top: -4px;
+}
+
+.header-socials > li{
+    list-style: none;
+    padding:5px;
+
+}
+
+.header-socials li a:hover{
+    color: pink;
+}
+
+.header-socials li a{
+    font-size: 2em;
+    color: black;
+    display: inline-block;
+    transition: 0.5s;
 }

@@ -4,6 +4,9 @@
     width: 100%;
     background-color: #282c34;
     padding-bottom: 5rem;
+    position: relative;
+    float: bottom;
+    bottom: 0;
 }
 
 .footer-container p{
@@ -51,8 +54,16 @@
 
 }
 
-.socials {
+.credits-container{
+    background-color: white;
+    height: 50px;
+}
+.credits-container > p{
+    color: black;
+    margin-left: 20px;
+}
 
+.socials {
     position: relative;
     display: flex;
     align-items: center;
@@ -156,6 +167,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 970px) {
+
 
 }

@@ -1,0 +1,155 @@
+.login{
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    width: 100vh;
+    max-width: 1000px;
+    box-shadow: 30px 30px 25px -10px rgba(0,0,0,0.35);
+}
+
+.login .welcome-container{
+    background: linear-gradient(rgba(0,0,0,0.10),rgba(0,0,0,0.25));
+    position: relative;
+    text-align: center;
+    max-width: 400px;
+}
+
+.login .welcome-container > h1{
+    position: absolute;
+    display: flex;
+    text-align: start;
+    font-size: 55px;
+    color: #fcf7f7;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login .welcome-container > img{
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+
+}
+
+.login .login_container{
+    position: relative;
+    background-color: #fcf7f7;
+    width: 100%;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    height: 100%;
+
+}
+
+.login_container > div > img{
+    height: 250px;
+}
+
+.login_container > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.google-icon{
+    height:20px;
+    border-radius: 50px;
+}
+
+.login_container .header{
+    text-align: start;
+    margin-left: 15px;
+}
+
+.login_container .header > h2{
+    font-size: 30px;
+}
+
+.login_container .header > p{
+    margin-top: -10px;
+    font-size: 15px;
+    color: gray;
+
+}
+
+.login_container > form {
+    margin-top: -50px;
+    margin-left: -20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login_container > form > p {
+    margin-top: -5px;
+    color: gray;
+    font-size: 13px;
+}
+
+
+.login_container > form > button{
+    border-radius: 3px;
+    width: 100%;
+}
+
+.login_container > form > input {
+    width: 200px;
+    height: 25px;
+    outline-width: 0;
+    padding: 5px 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+
+.login_options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -30px;
+
+}
+
+.option_item {
+    font-family: 'Didiot';
+    font-size: 18px;
+}
+
+.login .welcome-container .home-link{
+    position: absolute;
+    display: flex;
+    top: 20px;
+    left: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #dedbd5;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.home-link > p{
+    font-size: 14px;
+    margin-left: 5px;
+    margin-top: 3px;
+    padding-right: 8px;
+}
+
+.option_item_register{
+    display: flex;
+}
+.option_item_register > p{
+    font-size: 17px;
+}
+
+.register_link{
+    color: gray;
+    margin-top: 16px;
+    margin-left: 8px;
+    font-size: 17px;
+}

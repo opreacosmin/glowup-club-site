@@ -7,12 +7,13 @@
     border-radius: 10px;
     box-shadow: 0 5px 7px -7px rgba(0,0,0,0.75);
 
+
+
 }
 
 .postSender_top{
-    height: 45px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border-bottom: 1px solid whitesmoke;
     padding: 15px;
 
@@ -21,6 +22,7 @@
 .postSender_top > form {
     flex: 1;
     display: flex;
+    flex-direction: column;
 }
 
 .postSender_top > form > input {

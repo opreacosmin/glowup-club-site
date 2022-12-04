@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import './PostSender.css'
 import CollectionsIcon from '@mui/icons-material/Collections';
-import {colors} from "@mui/material";
-import {Button} from "../../Buttons/Button";
-import {useStateValue} from "../../../StateProvider";
-import db from "../../../firebase-config";
+import {Button} from "../../components/Buttons/Button";
+import {useStateValue} from "../../StateProvider";
+import db from "../../firebase-config";
 import firebase from 'firebase/compat/app';
-import img from "../../resources/categories/img.jpg"
+import img from "../../components/resources/categories/pexels-mountain-pic.jpg"
 import {addDoc, collection} from 'firebase/firestore';
+import {useNavigate} from "react-router-dom";
 
 
 function PostSender(){
@@ -21,13 +21,16 @@ function PostSender(){
 
         e.preventDefault();
         await addDoc(postsCollection, {
-            title:title,
-            message:input,
+            title: title,
+            message: input,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             profilePic: user.photoURL,
             username: user.displayName,
             image: img,
-        });
+        })
+        setInput("");
+        setTitle("");
+    };
 
         /*
         db.collection("posts").add({
@@ -40,16 +43,20 @@ function PostSender(){
 
          */
 
-        setInput("");
-        setTitle("");
-    };
-
     const [{user}, dispatch] = useStateValue();
+    const navigate = useNavigate();
+
+    const routeChange = () =>{
+        let path = `/Login`;
+        navigate(path);
+    }
 
     return(
         <>
+
             <div className='postSender'>
                 <div className='postSender_top'>
+                    {/*}
                     { !user ?
                         <form>
                             <input
@@ -62,16 +69,18 @@ function PostSender(){
                             />
 
                             <Button
-                                type="submit"
                                 className='btns'
                                 buttonStyle='btn--outline'
                                 buttonSize='btn--small'
+                                onClick={routeChange}
                             > Log In
                             </Button>
                         </form>
 
                         : (
-                            <form>
+                            {*/}
+                    <form onSubmit={handleSubmit}>
+                        <p>Insert post title</p>
                                 <input value={title}
                                        onChange={ (e) => {
                                            setTitle(e.target.value);} }
@@ -99,8 +108,8 @@ function PostSender(){
                             </form>
 
 
-                        )
-                    }
+
+
                 </div>
 
                 <div className='postSender_bottom'>
